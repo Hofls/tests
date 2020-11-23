@@ -7,3 +7,11 @@ Node.js library to automate Chromium/Firefox/WebKit
 * Parallelization with browser contexts (one browser instance, multiple environments)
 * Resilient element selectors (user-facing strings)
 
+### Assertions
+* Standard Node.js assertions
+```
+    const assert = require('assert');
+    const userName = await page.innerText('.user-name');
+    assert.strictEqual(userName, 'Hofls');
+```
+
