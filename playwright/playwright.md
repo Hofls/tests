@@ -7,11 +7,21 @@ Node.js library to automate Chromium/Firefox/WebKit
 * Parallelization with browser contexts (one browser instance, multiple environments)
 * Resilient element selectors (user-facing strings)
 
-### Assertions
-* Standard Node.js assertions
-```
-    const assert = require('assert');
-    const userName = await page.innerText('.user-name');
-    assert.strictEqual(userName, 'Hofls');
-```
-
+### Selectors
+* Text
+    * `await page.waitForSelector('text="Successfully updated"')`
+        * `<p>Successfully updated</p>`
+    * `await page.click('text=/2020.11.24/');`
+        * `<span>Last visit - 2020.11.24, at 16:43</span>`
+* [Css](https://appletree.or.kr/quick_reference_cards/CSS/CSS%20selectors%20cheatsheet.pdf)
+    * `await page.fill('css=[placeholder="Enter name"]', 'John');`
+        * `<input placeholder="Enter name"/>`
+    * `await page.click('css=span.login-area :nth-child(2)');`
+        * ```
+          <span class="login-area">
+            <button/>
+            <button/>
+          </span>
+          ```
+* [Xpath](https://devhints.io/xpath)
+    * 
