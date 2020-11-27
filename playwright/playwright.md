@@ -23,7 +23,7 @@ Node.js library to automate Chromium/Firefox/WebKit
             <button/>
           </span>
           ```
-    * `await page.fill('css=.lu-modal-body [placeholder="dd.mm.yyyy"]', '20.11.2020');`
+    * `await page.fill('css=.lu-modal-body input[placeholder="dd.mm.yyyy"]', '20.11.2020');`
         *  ```
             <div class="lu-modal-body">
               <div>
@@ -32,4 +32,17 @@ Node.js library to automate Chromium/Firefox/WebKit
             </div>
             ```
 * [Xpath](https://devhints.io/xpath)
-    * 
+    * `'xpath=//div[text()="Password"]/ancestor::foo'`
+        * ```
+            <foo>
+              <div>Password</div>
+            </foo>
+          ```
+* Combining different selector types:
+    * `await page.click('xpath=//div >> css=button');`
+        * ```
+            <button/>
+            <div>
+                <button/>
+            <div>
+          ```
