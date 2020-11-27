@@ -15,6 +15,5 @@ minmal-setup-tests:
     - cd dispatcher
     - docker build --tag minmal-setup:1.0 .
     - docker run minmal-setup:1.0
-  when: manual
   tags:
     - docker
