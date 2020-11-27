@@ -23,5 +23,13 @@ Node.js library to automate Chromium/Firefox/WebKit
             <button/>
           </span>
           ```
+    * `await page.fill('css=.lu-modal-body [placeholder="dd.mm.yyyy"]', '20.11.2020');`
+        *  ```
+            <div class="lu-modal-body">
+              <div>
+                <input placeholder="dd.mm.yyyy"/>
+              </div>
+            </div>
+            ```
 * [Xpath](https://devhints.io/xpath)
     * 
