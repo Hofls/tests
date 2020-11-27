@@ -1,0 +1,20 @@
+# TODO: if test failed - save screenshot in "artifacts" folder (for ease of debugging)
+before_script:
+  - mkdir -p artifacts
+
+stages:
+  - tests
+
+minmal-setup-tests:
+  stage: tests
+  artifacts:
+    expire_in: 1 hrs
+    paths:
+      - ./artifacts
+  script:
+    - cd dispatcher
+    - docker build --tag minmal-setup:1.0 .
+    - docker run dispatcher-e2e:1.0
+  when: manual
+  tags:
+    - docker
