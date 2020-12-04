@@ -16,6 +16,7 @@ afterAll(async () => {
 
 beforeEach(async () => {
     context = await browser.newContext();
+    context.setDefaultTimeout(7 * 1000);
     page = await browserUtil.newPage(context);
 });
 
