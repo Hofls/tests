@@ -2,8 +2,7 @@
   "scripts": {
     "dev-tests": "cross-env NODE_PROFILE='dev' jest",
     "dev-test": "cross-env NODE_PROFILE='dev' jest -t hello-world-test",
-    "prod-tests": "cross-env NODE_PROFILE='prod' jest && sleep 3",
-    "prod-tests:help": "echo 'Without sleep 3 - container instanlty stops after tests, without showing report in logs'",
+    "prod-tests": "cross-env NODE_PROFILE='prod' jest",
     "prod-test": "cross-env NODE_PROFILE='prod' jest -t hello-world-test"
   },
   "devDependencies": {
