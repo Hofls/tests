@@ -69,7 +69,7 @@ Node.js library to automate Chromium/Firefox/WebKit
 ##### iFrames
 * Click on button inside iFrame:
     ```
-    let element = await page.$('css=[title="Frame with buttons"]');
+    let element = await page.waitForSelector('css=[title="Frame with buttons"]');
     let frame = await element.contentFrame();
     await frame.click('text="Button in frame"');
     ```
