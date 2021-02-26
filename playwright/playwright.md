@@ -48,16 +48,19 @@ Node.js library to automate Chromium/Firefox/WebKit
           ```
 
 ### Recipes
+##### Execute any javascript code:
+* Get selected text
+    * `await page.evaluate(() => document.getSelection().toString());`
 ##### Search elements
 * Strict:
-    * Matches with "Hello", ignores "Hello World":
+    * Matches with "Hello", ignores "Hello World"
     * `await page.click(`xpath=//div[text()="Hello"]`);`
 * Relaxed:
     * Matches with "Hello", "Hmm Hello World"
     * `await page.click('text=/Hello/');`
     * `await page.click('text="Hello"');`
 
-##### Button
+##### Buttons
 * Default click:
     * `await page.click('text="Save button"');`
 * Alternative click:
@@ -73,3 +76,13 @@ Node.js library to automate Chromium/Firefox/WebKit
     let frame = await element.contentFrame();
     await frame.click('text="Button in frame"');
     ```
+
+##### Keyboard
+* Write text:
+    * `await page.keyboard.insertText('SD15880789');`
+* Press Enter:
+    * `await page.keyboard.press('Enter')`
+* Copy text:
+    * `await page.keyboard.press('Control+C');`
+
+    
