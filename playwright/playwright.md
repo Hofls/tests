@@ -9,9 +9,9 @@ Node.js library to automate Chromium/Firefox/WebKit
 
 ### Selector types
 * Text
-    * `await page.waitForSelector('text="Successfully updated"')`
+    * `await page.waitForSelector('text="Successfully"')` (for really strict search look at xpath)
         * `<p>Successfully updated</p>`
-    * `await page.click('text=/2020.11.24/');`
+    * `await page.click('text=/2020.11.24/');` (regex)
         * `<span>Last visit - 2020.11.24, at 16:43</span>`
 * [Css](https://appletree.or.kr/quick_reference_cards/CSS/CSS%20selectors%20cheatsheet.pdf)
     * `await page.fill('css=[placeholder="Enter name"]', 'John');`
@@ -55,6 +55,7 @@ Node.js library to automate Chromium/Firefox/WebKit
 * Relaxed:
     * Matches with "Hello", "Hmm Hello World"
     * `await page.click('text=/Hello/');`
+    * `await page.click('text="Hello"');`
 
 ##### Button
 * Default click:
