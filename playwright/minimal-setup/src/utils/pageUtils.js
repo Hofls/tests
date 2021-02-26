@@ -30,6 +30,12 @@ module.exports = {
         return chatText;
     },
 
+    /** Each frame is different world, it's impossible to reach everything from main page */
+    getFrame: async function(page, selector) {
+        let element = await page.waitForSelector(selector);
+        return await element.contentFrame();
+    },
+
     /** For debug purposes */
     sleep: async function(seconds) {
         return new Promise((resolve) => {
