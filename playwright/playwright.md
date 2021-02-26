@@ -7,7 +7,7 @@ Node.js library to automate Chromium/Firefox/WebKit
 * Parallelization with browser contexts (one browser instance, multiple environments)
 * Resilient element selectors (user-facing strings)
 
-### Selectors
+### Selector types
 * Text
     * `await page.waitForSelector('text="Successfully updated"')`
         * `<p>Successfully updated</p>`
@@ -46,3 +46,29 @@ Node.js library to automate Chromium/Firefox/WebKit
                 <button/>
             <div>
           ```
+
+### Recipes
+##### Search elements
+* Strict:
+    * Matches with "Hello", ignores "Hello World":
+    * `await page.click(`xpath=//div[text()="Hello"]`);`
+* Relaxed:
+    * Matches with "Hello", "Hmm Hello World"
+    * `await page.click('text=/Hello/');`
+
+##### Button
+* Default click:
+    * `await page.click('text="Save button"');`
+* Alternative click:
+    ```
+    let saveButton = await page.waitForSelector('text="Save button"');
+    await saveButton.dispatchEvent('click');
+    ```
+
+##### iFrames
+* Click on button inside iFrame:
+    ```
+    let element = await page.$('css=[title="Frame with buttons"]');
+    let frame = await element.contentFrame();
+    await frame.click('text="Button in frame"');
+    ```

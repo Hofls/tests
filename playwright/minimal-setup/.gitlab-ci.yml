@@ -1,6 +1,5 @@
-# TODO: if test failed - save screenshot in "artifacts" folder (for ease of debugging)
 before_script:
-  - mkdir -p artifacts
+  - mkdir -p screenshots
 
 stages:
   - tests
@@ -8,12 +7,13 @@ stages:
 minmal-setup-tests:
   stage: tests
   artifacts:
+    when: always
     expire_in: 1 hrs
     paths:
-      - ./artifacts
+      - screenshots
   script:
     - cd dispatcher
-    - docker build --tag minmal-setup:1.0 .
-    - docker run minmal-setup:1.0
+    - docker build --tag minimal-setup:1.0 .
+    - docker run --volume $(pwd)/screenshots:/screenshots minimal-setup:1.0
   tags:
     - docker
