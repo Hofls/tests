@@ -51,6 +51,7 @@ Node.js library to automate Chromium/Firefox/WebKit
 ##### Execute any javascript code:
 * Get selected text
     * `await page.evaluate(() => document.getSelection().toString());`
+    
 ##### Search elements
 * Strict:
     * Matches with "Hello", ignores "Hello World"

@@ -10,8 +10,8 @@ module.exports = {
         }
     },
 
-    newPage: async function(browser) {
-        const page = await browser.newPage();
+    newPage: async function(context) {
+        const page = await context.newPage();
         await page.setViewportSize({ width: 1820, height: 980 });
         await page.goto('http://your-site-here.com');
         return page;
