@@ -38,6 +38,12 @@ Node.js library to automate Chromium/Firefox/WebKit
               <div>Password</div>
             </foo>
           ```
+    * `sdFrame.click('xpath=//a[starts-with(text(),"Info about")]');`
+        * ```
+            <foo>
+              <a>Info about product</div>
+            </foo>
+          ```
 * Combining different selector types:
     * `await page.click('xpath=//div >> css=button');`
         * ```
@@ -60,6 +66,11 @@ Node.js library to automate Chromium/Firefox/WebKit
     * Matches with "Hello", "Hmm Hello World"
     * `await page.click('text=/Hello/');`
     * `await page.click('text="Hello"');`
+* Find array of elements:
+    ```
+    let links = await tableFrame.$$(`xpath=//a[starts-with(text(),"SD")]`);
+    for (let link of links) {}
+    ```
 
 ##### Buttons
 * Default click:
@@ -81,6 +92,8 @@ Node.js library to automate Chromium/Firefox/WebKit
 ##### Keyboard
 * Write text:
     * `await page.keyboard.insertText('SD15880789');`
+* Move around the page:
+    * `await page.keyboard.press('Tab')`
 * Press Enter:
     * `await page.keyboard.press('Enter')`
 * Copy text:

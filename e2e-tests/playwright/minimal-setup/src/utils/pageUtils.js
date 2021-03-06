@@ -36,6 +36,18 @@ module.exports = {
         return await element.contentFrame();
     },
 
+    waitForLoader: async function(page) {
+        await this.sleep(2);
+        let waitingLimit = 25;
+        for (let seconds = 0; seconds < waitingLimit; seconds++) {
+            let loader = await page.$(`xpath=//div[text()="Loading..."]`);
+            if (!loader) {
+                return ;
+            }
+            await this.sleep(1);
+        }
+    },
+
     /** For debug purposes */
     sleep: async function(seconds) {
         return new Promise((resolve) => {
