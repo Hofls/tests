@@ -22,7 +22,8 @@ module.exports = {
      * When 'document.getSelection()' is not enough
      * Prerequisite: await context.grantPermissions(["clipboard-read", "clipboard-write"]);
      */
-    readSelection: async function(page) {
+    readAll: async function(page) {
+        await page.keyboard.press('Control+A');
         await page.evaluate(() => navigator.clipboard.writeText(""));
         await page.keyboard.press('Control+C');
         let chatText = await page.evaluate(() => navigator.clipboard.readText());
