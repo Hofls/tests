@@ -20,15 +20,20 @@ module.exports = {
 
     /**
      * When 'document.getSelection()' is not enough
-     * Prerequisite: await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+     * Prerequisites:
+     * 1. await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+     * 2. Page with https
      */
-    readAll: async function(page) {
-        await page.keyboard.press('Control+A');
+    readSelection: async function(page) {
         await page.evaluate(() => navigator.clipboard.writeText(""));
         await page.keyboard.press('Control+C');
         let chatText = await page.evaluate(() => navigator.clipboard.readText());
         await page.evaluate(() => navigator.clipboard.writeText(""));
         return chatText;
+    },
+
+    getPageText: async function(page) {
+        return await page.evaluate(() => document.body.innerText);
     },
 
     /** Each frame is different world, it's impossible to reach everything from main page */
