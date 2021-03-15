@@ -32,6 +32,7 @@ module.exports = {
         return chatText;
     },
 
+    // expect(pageText.includes('ID - 281737')).toBeTruthy();
     getPageText: async function(page) {
         return await page.evaluate(() => document.body.innerText);
     },
