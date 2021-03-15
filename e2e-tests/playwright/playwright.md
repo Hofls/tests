@@ -57,6 +57,8 @@ Node.js library to automate Chromium/Firefox/WebKit
 ##### Execute any javascript code:
 * Get selected text
     * `await page.evaluate(() => document.getSelection().toString());`
+* Get focused element inner text:
+    * `await page.evaluate(() => document.activeElement.innerText);`
     
 ##### Search elements
 * Strict:
@@ -98,5 +100,4 @@ Node.js library to automate Chromium/Firefox/WebKit
     * `await page.keyboard.press('Enter')`
 * Copy text:
     * `await page.keyboard.press('Control+C');`
-
     
