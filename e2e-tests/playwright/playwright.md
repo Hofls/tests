@@ -59,6 +59,8 @@ Node.js library to automate Chromium/Firefox/WebKit
     * `await page.evaluate(() => document.getSelection().toString());`
 * Get focused element inner text:
     * `await page.evaluate(() => document.activeElement.innerText);`
+* Get focused input value:
+    * `await page.evaluate(() => document.activeElement.value);`
     
 ##### Search elements
 * Strict:
