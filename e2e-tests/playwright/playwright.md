@@ -54,7 +54,7 @@ Node.js library to automate Chromium/Firefox/WebKit
           ```
 
 ### Recipes
-##### Execute any javascript code:
+##### Read focused element:
 * Get selected text
     * `await page.evaluate(() => document.getSelection().toString());`
 * Get focused element inner text:
@@ -75,6 +75,8 @@ Node.js library to automate Chromium/Firefox/WebKit
     let links = await tableFrame.$$(`xpath=//a[starts-with(text(),"SD")]`);
     for (let link of links) {}
     ```
+* Click on third "Cancel order" element
+    * `await page.click('css=:nth-match(:text("Cancel order"), 3)');`
 
 ##### Buttons
 * Default click:
