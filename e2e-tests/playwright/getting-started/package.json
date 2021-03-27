@@ -3,6 +3,6 @@
     "start": "node src/main.js"
   },
   "devDependencies": {
-    "playwright": "^1.6.2"
+    "playwright": "1.9.1"
   }
 }
