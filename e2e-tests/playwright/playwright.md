@@ -77,6 +77,8 @@ Node.js library to automate Chromium/Firefox/WebKit
     ```
 * Click on third "Cancel order" element
     * `await page.click('css=:nth-match(:text("Cancel order"), 3)');`
+* Find without waiting for an element to appear
+    * `let saveButton = await page.$('text="Save"');`
 
 ##### Buttons
 * Default click:
