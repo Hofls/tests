@@ -18,6 +18,12 @@ module.exports = {
         await element.dispatchEvent('click');
     },
 
+    clickOnLast: async function(page, selector) {
+        await page.waitForSelector(selector);
+        let responses = await page.$$(selector);
+        await responses[responses.length - 1].click();
+    },
+
     /**
      * When 'document.getSelection()' is not enough
      * Prerequisites:
