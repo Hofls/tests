@@ -65,11 +65,14 @@ Node.js library to automate Chromium/Firefox/WebKit
 ##### Search elements
 * Strict:
     * Matches with "Hello", ignores "Hello World"
+    * `await page.click('text="Hello"');`
     * `await page.click(`xpath=//div[text()="Hello"]`);`
 * Relaxed:
     * Matches with "Hello", "Hmm Hello World"
+    * `await page.click('text=Hello');`
     * `await page.click('text=/Hello/');`
-    * `await page.click('text="Hello"');`
+* Regex:
+    * `await page.click('text=/He??o/');`
 * Find array of elements:
     ```
     let links = await tableFrame.$$(`xpath=//a[starts-with(text(),"SD")]`);
