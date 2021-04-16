@@ -18,6 +18,18 @@ module.exports = {
         await element.dispatchEvent('click');
     },
 
+    clickInvisible: async function(page, selector) {
+        let element = await page.$(selector);
+        await element.dispatchEvent('click');
+    },
+
+    //  await pageUtils.hold(page, 'PageDown');
+    hold: async function(page, button) {
+        for (let i = 0; i < 20; i++) {
+            await page.keyboard.press(button);
+        }
+    },
+
     clickOnLast: async function(page, selector) {
         await page.waitForSelector(selector);
         let responses = await page.$$(selector);
