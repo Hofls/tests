@@ -18,6 +18,12 @@ module.exports = {
         await element.dispatchEvent('click');
     },
 
+    /** Doesn't wait for selector to appear, returns instantly */
+    findInstant: async function(page, selector) {
+        await page.waitForLoadState();
+        return await page.$(selector);
+    },
+
     clickInvisible: async function(page, selector) {
         let element = await page.$(selector);
         await element.dispatchEvent('click');
