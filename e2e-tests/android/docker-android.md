@@ -1,4 +1,5 @@
 #### Getting started
+* Based on [this](https://github.com/budtmo/docker-android)
 * Make sure virtualization enabled:
     * Ubuntu:
         * `apt install cpu-checker`
