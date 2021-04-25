@@ -9,12 +9,11 @@
 * `apt update`
 * `apt install docker.io`
 
-#### Docker-android (not really working)
+#### Docker-android
 * [Docker-android](https://github.com/budtmo/docker-android)
-* `docker run --privileged -d -p 6080:6080 -p 5554:5554 -p 5555:5555 -p 4723:4723 --name android-container-appium budtmo/docker-android-real-device`
+* `docker run --privileged -d -p 6080:6080 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name android-container budtmo/docker-android-x86-8.1`
 * Open in browser `http://YOUR_SITE_IP:6080/`
-    * Right click on noVNC window -> `Terminal emulator`
-    * Check devices list: 
-        * `adb -H localhost devices`
-        * `emulator -list-avds`
-    * Run emulator: `emulator`
+
+#### TODO
+* https://github.com/thyrlian/AndroidSDK
+
