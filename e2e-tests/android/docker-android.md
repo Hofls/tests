@@ -17,3 +17,13 @@
 #### TODO
 * https://github.com/thyrlian/AndroidSDK
 
+#### Testing frameworks:
+* Black box (.apk testing)
+    * `Robotium`
+    * `App Crawler` - automatically test your app (without writing code)
+    * `Monkey` - generates streams of user events such as clicks, touches, or gestures
+    * `Calabash`
+* White box (source code testing)
+    * ?UI Automator?
+    * ?Espresso?
+
