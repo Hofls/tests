@@ -12,7 +12,7 @@
 
 #### Docker-android
 * [Docker-android](https://github.com/budtmo/docker-android)
-* `docker run --privileged -d -p 6080:6080 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name android-container budtmo/docker-android-x86-8.1`
+* `docker run --privileged -d -p 6080:6080 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name android-container budtmo/docker-android-x86-11.0`
 * Expose ports to the internet (Inbound port rules)
 * Open in browser `http://YOUR_SITE_IP:6080/`
 * Connect with debug bridge `adb connect YOUR_SITE_IP:5555`
