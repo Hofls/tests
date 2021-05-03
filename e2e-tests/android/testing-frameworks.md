@@ -4,12 +4,12 @@
 * Black box (.apk testing)
     * `Firebase test lab` - cloud-based app testing infrastructure
         * `Robo tests`
+            * Disclaimer: must have access to source code
             * Android Studio -> Tools -> Firebase -> Test lab -> Record Robo Script
-            * Android Studio -> Help -> Find action -> Generate signed APK
+            * Upload .apk + roboscript to Firebase
     * `Monkey` - generates streams of user events such as clicks, touches, or gestures
         * Launch a virtual device, it should appear in the list - `adb devices`
         * Execute `adb shell monkey -p com.somesoft.gdoc -v 500`
-    * `Poco` - 
     * `Appium`
             * Appium recorder - https://github.com/appium/appium-desktop#the-recorder
     * `Xamarin.UITest`
