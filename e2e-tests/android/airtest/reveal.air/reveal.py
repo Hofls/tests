@@ -3,7 +3,7 @@ __author__ = "Hofls"
 
 from airtest.core.api import *
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-poco = AndroidUiautomationPoco()
+poco = AndroidUiautomationPoco(screenshot_each_action=False)
 auto_setup(__file__)
 
 PWD = os.path.dirname(__file__)

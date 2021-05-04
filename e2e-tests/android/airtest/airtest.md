@@ -27,3 +27,12 @@
 * If Poco unable to correctly identify UI elements - restart it (`Stop` -> `Android`)
 * If you don't know package name - [click here](../adb.md)
 
+#### Useful features
+* Click on visible text:
+    * `poco("text="Save changes"").click()`
+* Get/set text:
+    * `poco("somesoft.gdoc:id/area").set_text("3")`
+    * `poco("somesoft.gdoc:id/area").get_text()`
+* Keys based navigation:
+    * `keyevent("TAB")`
+    * `keyevent("ENTER")`
