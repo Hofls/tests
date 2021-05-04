@@ -11,8 +11,7 @@ def call_card_therapist(poco):
         poco(text="Sonny Born").click()
         poco("ru.somesoft.gdoc:id/takeIt").click()
 
-        poco("ru.somesoft.gdoc:id/viewName").click()
-        poco("ru.somesoft.gdoc:id/startExecution").click()
-        poco("android:id/button1").click()
+        for x in range(3):
+            touch(Template(r"images/sign_checkbox.png", record_pos=(-0.425, -0.263), resolution=(1200, 1920)))
     except Exception as e:
         logging.exception(e)
