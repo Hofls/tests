@@ -7,6 +7,10 @@ Node.js library to automate Chromium/Firefox/WebKit
 * Parallelization with browser contexts (one browser instance, multiple environments)
 * Resilient element selectors (user-facing strings)
 
+### Ecosystem
+* [Script recorder](https://github.com/checkly/headless-recorder)
+    * Not as good as Airtest Project (Android), but decent
+
 ### Selector types
 * Text
     * `await page.waitForSelector('text="Successfully"')` (for really strict search look at xpath)
