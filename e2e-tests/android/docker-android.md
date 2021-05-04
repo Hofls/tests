@@ -1,4 +1,6 @@
 #### Getting started
+* Minimal requirements:
+    * GPU is important. Without GPU - emulator will be very slow and laggy.
 * Make sure virtualization enabled:
     * Ubuntu:
         * `apt install cpu-checker`
