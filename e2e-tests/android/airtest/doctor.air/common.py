@@ -12,9 +12,12 @@ def login(poco):
     poco(text="1").click()
     poco(text="2").click()
     poco(text="3").click()
-    poco(text="4").click()
-    poco(text="5").click()
-    poco(text="6").click()
     poco(text="John Wilder").click()
 
-
+def sign(poco):
+    checkbox = Template(r"images/sign_checkbox.png", record_pos=(-0.425, -0.263), resolution=(1200, 1920))
+    for x in range(6):
+        if (exists(checkbox)):
+            touch(checkbox)
+        else:
+            poco(text="Sign all").click()
