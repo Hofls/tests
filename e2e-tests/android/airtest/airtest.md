@@ -38,3 +38,7 @@
     * `keyevent("ENTER")`
 * Wait for element 12 seconds:
     * `poco(text="Reset values").wait_for_appearance(12)`
+
+#### Documentation
+* Poco - https://poco-chinese.readthedocs.io/zh_CN/latest/source/README.html
+* Airtest - https://airtest.readthedocs.io/en/latest/README_MORE.html
