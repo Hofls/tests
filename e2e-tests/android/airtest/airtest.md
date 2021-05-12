@@ -30,6 +30,7 @@
 #### Useful features
 * Click on visible text:
     * `poco("text="Save changes"").click()`
+    * `poco(textMatches="Found .* records").click()`
 * Get/set text:
     * `poco("somesoft.gdoc:id/area").set_text("3")`
     * `poco("somesoft.gdoc:id/area").get_text()`
