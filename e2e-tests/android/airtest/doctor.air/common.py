@@ -21,3 +21,9 @@ def sign(poco):
             touch(checkbox)
         else:
             poco(text="Sign all").click()
+
+# Function is necessary, because set_text doesn't wait for element appearance
+# setText(poco(text="Login"), "someset87")
+def setText(element, text):
+    element.wait_for_appearance(timeout=12)
+    element.set_text(text)
