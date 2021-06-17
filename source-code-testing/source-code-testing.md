@@ -9,6 +9,7 @@
     * If tests require multiple mocks/spies/stubs - unit tests are bad
         * Use higher level of abstraction (system/integration tests)
 * Unit tests as documentation (method usage example)
-* They provide ability to refactor easily. No need to run project and test manually.  
+* They provide ability to change code (e.g. refactor) easily. No need to run project and test manually.
+* Allow a safe update of dependency versions (if something breaks - tests will show)
 * Provide ability to experiment - jump into tests, change a couple of parameters/lines, see what happens.
 
