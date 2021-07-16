@@ -5,11 +5,17 @@
 
 #### Unit tests
 * Good and bad unit tests:
-    * When method takes input and produces output, with no side effects - unit tests are gread
+    * When method takes input and produces output, with no side effects - unit tests are great
     * If tests require multiple mocks/spies/stubs - unit tests are bad
-        * Use higher level of abstraction (system/integration tests)
+        * Use higher level of abstraction (e.g. integration tests)
 * Unit tests as documentation (method usage example)
 * They provide ability to change code (e.g. refactor) easily. No need to run project and test manually.
 * Allow a safe update of dependency versions (if something breaks - tests will show)
 * Provide ability to experiment - jump into tests, change a couple of parameters/lines, see what happens.
 
+#### Integration tests
+* Test the entire scenarios:
+    * NEW -> CHECKOUT -> PROCESSING -> RETRY -> RETRY -> DONE -> ARCHIVE
+* Check units integration
+* Don't bother about details, those should be covered by unit tests
+ 
