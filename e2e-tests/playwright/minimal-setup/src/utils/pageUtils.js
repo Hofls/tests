@@ -79,6 +79,23 @@ module.exports = {
         }
     },
 
+    /** Search by dom node property */
+    findInputByValue: async function(page, value) {
+        await this.sleep(2);
+        let inputs = await page.$$('css=input');
+        console.log('GO');
+        for (let input of inputs) {
+            let inputValue = await this.getProperty(input, "value");
+            if (inputValue === value) {
+                return input;
+            }
+        }
+    },
+
+    getProperty: async function(element, property) {
+        return await (await element.getProperty(property)).jsonValue();
+    },
+
     /** For debug purposes */
     sleep: async function(seconds) {
         return new Promise((resolve) => {
