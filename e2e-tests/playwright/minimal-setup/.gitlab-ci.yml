@@ -15,5 +15,7 @@ minmal-setup-tests:
     - cd dispatcher
     - docker build --tag minimal-setup:1.0 .
     - docker run --volume $(pwd)/screenshots:/screenshots minimal-setup:1.0
+  after_script:
+    - sleep 3
   tags:
     - docker
