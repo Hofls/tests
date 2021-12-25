@@ -1,5 +1,6 @@
 ### Info
 * Use case - SOAP service without frontend
+* For more info about SoapUI look at `useful-info` repository
 
 ### TestSuite
 * Create new project, add services

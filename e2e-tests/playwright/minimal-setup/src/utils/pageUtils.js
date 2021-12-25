@@ -67,6 +67,12 @@ module.exports = {
         return await element.contentFrame();
     },
 
+    replaceText: async function(page, text) {
+        await page.keyboard.press('Control+A');
+        await page.keyboard.press('Delete');
+        await page.keyboard.insertText(text);
+    },
+
     waitForLoader: async function(page) {
         await this.sleep(2);
         let waitingLimit = 25;

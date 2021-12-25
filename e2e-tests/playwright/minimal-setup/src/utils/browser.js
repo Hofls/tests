@@ -10,6 +10,13 @@ module.exports = {
         }
     },
 
+    newContext: async function(browser) {
+        let context = await browser.newContext();
+        await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+        context.setDefaultTimeout(60 * 1000);
+        return context;
+    },
+
     newPage: async function(context) {
         const page = await context.newPage();
         await page.setViewportSize({ width: 1820, height: 980 });
