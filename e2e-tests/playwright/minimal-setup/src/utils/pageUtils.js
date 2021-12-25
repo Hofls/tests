@@ -73,6 +73,15 @@ module.exports = {
         await page.keyboard.insertText(text);
     },
 
+    /**
+     * Prerequisites:
+     * let context = await browser.newContext({ acceptDownloads: true });
+     */
+    waitForDownload: async function(page) {
+        let download = await page.waitForEvent('download');
+        return await download.path();
+    },
+
     waitForLoader: async function(page) {
         await this.sleep(2);
         let waitingLimit = 25;
