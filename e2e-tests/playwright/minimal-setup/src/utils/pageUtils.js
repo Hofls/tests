@@ -109,13 +109,17 @@ module.exports = {
 
     readTable: async function(page) {
         let rows = await page.$$("table.x-grid3-row-table");
+        let results = [];
         for (let row of rows) {
-            console.log("-------------------------");
             let columns = await row.$$('td');
-            for (let column of columns) {
-                console.log(await column.innerText());
+            let result = {
+                code: await columns[0].innerText(),
+                category: await columns[1].innerText(),
+                status: await columns[2].innerText()
             }
+            results.push(result);
         }
+        return results;
     },
 
     getProperty: async function(element, property) {
