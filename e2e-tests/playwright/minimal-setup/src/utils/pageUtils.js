@@ -107,6 +107,17 @@ module.exports = {
         }
     },
 
+    readTable: async function(page) {
+        let rows = await page.$$("table.x-grid3-row-table");
+        for (let row of rows) {
+            console.log("-------------------------");
+            let columns = await row.$$('td');
+            for (let column of columns) {
+                console.log(await column.innerText());
+            }
+        }
+    },
+
     getProperty: async function(element, property) {
         return await (await element.getProperty(property)).jsonValue();
     },
