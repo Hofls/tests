@@ -1,9 +1,19 @@
 module.exports = {
 
+    /**
+     * Does not emit the keydown, keyup or keypress events. If you need them - use typeByLabel
+      */
     fillByLabel: async function(page, labelSelector, text) {
         await page.click(labelSelector);
         await page.keyboard.press('Tab')
         await page.keyboard.insertText(text);
+    },
+
+    typeByLabel: async function(page, labelSelector, text) {
+        await page.click(labelSelector);
+        await page.keyboard.press('Tab')
+        await page.keyboard.type(text);
+        await page.keyboard.press('Enter')
     },
 
     enterByLabel: async function(page, labelSelector) {

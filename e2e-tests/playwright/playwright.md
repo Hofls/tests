@@ -107,6 +107,7 @@ Node.js library to automate Chromium/Firefox/WebKit
 ##### Keyboard
 * Write text:
     * `await page.keyboard.insertText('SD15880789');`
+    * `await page.keyboard.type('SD15880789');`
 * Move around the page:
     * `await page.keyboard.press('Tab')`
 * Press Enter:
