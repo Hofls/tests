@@ -1,15 +1,15 @@
-### Description
-Node.js library to automate Chromium/Firefox/WebKit
-* Headless/Headful execution
-* Auto-wait for elements to be ready before executing actions (e.g. click, fill)
-* Emulate mobile devices, geolocation, permissions
-* Support for web components via shadow-piercing selectors
-* Parallelization with browser contexts (one browser instance, multiple environments)
-* Resilient element selectors (user-facing strings)
+### Info
+* `Playwright` - Node.js library for browser automation
 
-### Ecosystem
-* [Script recorder](https://github.com/checkly/headless-recorder)
-    * Not as good as Airtest Project (Android), but decent
+### npx playwright
+* Generated new project - `npm init playwright`
+* Run test generator - `npx playwright codegen playwright.dev`
+* Run all tests:
+    * `npm install`
+    * `npx playwright test --project=chromium --headed`
+* Run specific test - `npx playwright test --project=chromium --headed tests/todo-page.spec.ts`
+* Show report (after running a test) - `npx playwright show-report`
+* Debug - `npx playwright test --project=chromium --headed --debug`
 
 ### Selector types
 * Text
