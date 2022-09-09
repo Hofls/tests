@@ -2,13 +2,14 @@
 * `Playwright` - Node.js library for browser automation
 
 ### npx playwright
-* Generated new project - `npm init playwright`
+* Generate new project - `npm init playwright`
 * Run test generator - `npx playwright codegen playwright.dev`
 * Run all tests:
     * `npm install`
     * `npx playwright test --project=chromium --headed`
 * Run specific test - `npx playwright test --project=chromium --headed tests/todo-page.spec.ts`
-* Show report (after running a test) - `npx playwright show-report`
+* Show report (after running a test)
+    * Look at `playwright-report/index.html`, or execute `npx playwright show-report`
 * Debug - `npx playwright test --project=chromium --headed --debug`
 
 ### Selector types
