@@ -1,8 +1,7 @@
 const { test, expect } = require('@playwright/test');
+const browser = require("../src/utils/browser");
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc');
-});
+test.beforeEach(browser.login);
 
 test.describe('New Todo', () => {
 
