@@ -136,7 +136,6 @@ module.exports = {
         return await (await element.getProperty(property)).jsonValue();
     },
 
-    /** For debug purposes */
     sleep: async function(seconds) {
         return new Promise((resolve) => {
             setTimeout(resolve, 1000 * seconds);

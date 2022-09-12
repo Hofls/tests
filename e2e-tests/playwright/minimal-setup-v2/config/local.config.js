@@ -1,20 +1,22 @@
 const { devices } = require('@playwright/test');
 
-// require('dotenv').config();
-
 const config = {
-  testDir: './tests',
-  timeout: 30 * 1000,
+  testDir: '../tests',
+  timeout: 120 * 1000,
   expect: {
-    timeout: 5000
+    timeout: 10 * 1000
   },
   fullyParallel: true,
-  retries: 2,
+  retries: 0,
   workers: 1,
   reporter: [ ['html', { open: 'never' }] ],
   use: {
-    viewport: { width: 1280, height: 720 },
+    headless: false,
+    viewport: { width: 1600, height: 900 },
     screenshot: 'only-on-failure',
+    launchOptions: {
+      slowMo: 500,
+    },
   },
 
   projects: [

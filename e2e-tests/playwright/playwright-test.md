@@ -3,8 +3,10 @@
 * Run test generator - `npx playwright codegen playwright.dev`
 * Run all tests:
     * `npm install`
-    * `npx playwright test --project=chromium --headed`
-* Run specific test - `npx playwright test --project=chromium --headed tests/todo-page.spec.ts`
+    * `npx playwright test --config=config/local.config.js`
+* Run specific test:
+    * By file - `npx playwright test --config=config/local.config.js tests/todo-page.spec.ts`
+    * By name - `npx playwright test -g "Hello world"`
 * Show report (after running a test)
     * Look at `playwright-report/index.html`, or execute `npx playwright show-report`
 * Debug - `npx playwright test --project=chromium --headed --debug`

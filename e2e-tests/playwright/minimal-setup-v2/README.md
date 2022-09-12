@@ -2,8 +2,9 @@
 * Project was generated via `npm init playwright`
 
 ### Run locally
-* `npm install`
-* `npx playwright test --project=chromium --headed`
+* Install - `npm install`
+* Run all - `npx playwright test --config=config/local.config.js`
+* Run specific - `npx playwright test --config=config/local.config.js -g "Should add new item"`
 
 ### Run on server
 * `docker build --tag minimal-setup:2.0 .`

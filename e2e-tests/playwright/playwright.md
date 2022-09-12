@@ -1,5 +1,6 @@
 ### Info
-* `Playwright` - Node.js library for browser automation
+* `Playwright` - Node.js library for browser automation (generic)
+* `Playwirght Test` - specialized on e2e tests
 
 ### Selector types
 * Text
