@@ -12,7 +12,6 @@ const config = {
   reporter: [ ['html', { open: 'never' }] ],
   use: {
     headless: false,
-    viewport: { width: 1600, height: 900 },
     screenshot: 'only-on-failure',
     launchOptions: {
       slowMo: 500,
@@ -24,6 +23,7 @@ const config = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        viewport: { width: 1600, height: 900 },
       },
     }
   ],
