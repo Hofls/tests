@@ -11,6 +11,7 @@ const config = {
   workers: 1,
   reporter: [ ['html', { open: 'never' }] ],
   use: {
+    actionTimeout: 10 * 1000,
     headless: true,
     screenshot: 'only-on-failure',
     launchOptions: {

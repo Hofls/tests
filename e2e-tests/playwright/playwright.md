@@ -9,6 +9,20 @@
     * `await page.click('text=/2020.11.24/');` (regex)
         * `<span>Last visit - 2020.11.24, at 16:43</span>`
 * [Css](https://appletree.or.kr/quick_reference_cards/CSS/CSS%20selectors%20cheatsheet.pdf)
+    * `await page.locator('div:text-is("Login")').click();`
+        * `<div>Login</div>`
+    * `await page.locator('article:has(div.promo)').textContent();`
+        * ```
+          <article>
+            <p>Hello world!</p>
+            <div class=promo/>
+          </article>
+          ```
+    * `h1:has(+ p)`
+        * ```
+          <h1/>
+          <p/>
+          ```
     * `await page.fill('css=[placeholder="Enter name"]', 'John');`
         * `<input placeholder="Enter name"/>`
     * `await page.click('css=span.login-area :nth-child(2)');`
@@ -39,6 +53,11 @@
               <a>Info about product</div>
             </foo>
           ```
+* Layout-based selectors
+    * `await page.locator('input:right-of(:text("Username"))').first().fill('value');`
+        * Fill an input to the right of "Username"
+    * `await page.locator('button:near(.promo-card)').first().click();`
+        * Click a button near the promo card
 * Combining different selector types:
     * `await page.click('xpath=//div >> css=button');`
         * ```
@@ -46,6 +65,11 @@
             <div>
                 <button/>
             <div>
+          ```
+    * `await page.locator('a:has(+ p:text-is("Hello"))').click();`
+        * ```
+          <a/>
+          <p>Hello</p>
           ```
 
 ### Recipes
