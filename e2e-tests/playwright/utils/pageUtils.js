@@ -108,7 +108,6 @@ module.exports = {
     findInputByValue: async function(page, value) {
         await this.sleep(2);
         let inputs = await page.$$('css=input');
-        console.log('GO');
         for (let input of inputs) {
             let inputValue = await this.getProperty(input, "value");
             if (inputValue === value) {
@@ -130,6 +129,13 @@ module.exports = {
             results.push(result);
         }
         return results;
+    },
+
+    // await action.clickRightOf(page, 1200, 'text="Select a slot')
+    clickRightOf: async function(page, offset, selector) {
+        let element = await page.$(selector);
+        let box = await element.boundingBox();
+        await page.mouse.click(box.x + offset, box.y);
     },
 
     getProperty: async function(element, property) {
