@@ -101,6 +101,9 @@
     * `await page.click('css=:nth-match(:text("Cancel order"), 3)');`
 * Find without waiting for an element to appear
     * `let saveButton = await page.$('text="Save"');`
+* Find visible element (ignore all invisible)
+    * `await page.locator('text="Hello world" >> visible=true');`
+    * `await page.locator('button.greeitngs:visible');`
 
 ##### Buttons
 * Default click:
