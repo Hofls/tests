@@ -138,6 +138,13 @@ module.exports = {
         await page.mouse.click(box.x + offset, box.y);
     },
 
+    // await action.clickBelowOf(page, 50, 'text="Pick a date"');
+    clickBelowOf: async function(page, offset, selector) {
+        let element = await page.$(selector);
+        let box = await element.boundingBox();
+        await page.mouse.click(box.x + 10, box.y + offset);
+    },
+
     getProperty: async function(element, property) {
         return await (await element.getProperty(property)).jsonValue();
     },
