@@ -18,4 +18,8 @@
     * NEW -> CHECKOUT -> PROCESSING -> RETRY -> RETRY -> DONE -> ARCHIVE
 * Check units integration
 * Don't bother about details, those should be covered by unit tests
- 
+
+#### Visual tests
+* Only work for visual things (e.g. frontend, pdf, images)
+* Test makes screenshot, compares with an accepted (old) screenshot. If there is difference - asks developer to check it out
+* 
