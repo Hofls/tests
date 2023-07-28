@@ -85,7 +85,10 @@ module.exports = {
 
     /**
      * Prerequisites:
-     * let context = await browser.newContext({ acceptDownloads: true });
+     *   let context = await browser.newContext({ acceptDownloads: true });
+     * Usage (click without await is important):
+     *   page.locator('text=Get file').click();
+     *   await page.waitForEvent("download");
      */
     waitForDownload: async function(page) {
         let download = await page.waitForEvent('download');
