@@ -1,3 +1,6 @@
+// Import from main.js in root:
+// const pageUtils = require("./utils/pageUtils");
+
 module.exports = {
 
     /**
@@ -9,6 +12,7 @@ module.exports = {
         await page.keyboard.insertText(text);
     },
 
+    // await pageUtils.typeByLabel(page, 'text="Username"', 'admin');
     typeByLabel: async function(page, labelSelector, text) {
         await page.click(labelSelector);
         await page.keyboard.press('Tab')
