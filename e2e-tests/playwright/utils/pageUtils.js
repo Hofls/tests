@@ -121,7 +121,7 @@ module.exports = {
      *   let context = await browser.newContext({ acceptDownloads: true });
      * Usage (click without await is important):
      *   page.locator('text=Get file').click();
-     *   await page.waitForEvent("download");
+     *   let filePath = await waitForDownload(page);
      */
     waitForDownload: async function(page) {
         let download = await page.waitForEvent('download');
