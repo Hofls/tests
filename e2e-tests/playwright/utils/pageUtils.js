@@ -121,6 +121,18 @@ module.exports = {
         await page.keyboard.insertText(text);
     },
 
+
+    /**
+     * await uploadFile('hello.txt');
+     * When file uploading popup appears - it will receive hello.txt from project root
+     */
+    uploadFile: async function (fileName) {
+        const fileChooserPromise = page.waitForEvent('filechooser');
+        await page.click('text="Upload files"');
+        const fileChooser = await fileChooserPromise;
+        await fileChooser.setFiles(fileName);
+    },
+
     /**
      * Prerequisites:
      *   let context = await browser.newContext({ acceptDownloads: true });
