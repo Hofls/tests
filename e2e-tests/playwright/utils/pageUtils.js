@@ -134,6 +134,12 @@ module.exports = {
         await fileChooser.setFiles(file);
     },
 
+    // in case if uploadFile didn't work
+    uploadFileV2: async function (page, buttonName, file) {
+        await page.setInputFiles('input[type="file"]', file);
+        await page.click(`text="${buttonName}"`);
+    },
+
     /**
      * Prerequisites:
      *   let context = await browser.newContext({ acceptDownloads: true });
