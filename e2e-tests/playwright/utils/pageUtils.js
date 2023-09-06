@@ -31,6 +31,13 @@ module.exports = {
         await page.keyboard.press('Enter')
     },
 
+    navigateWithTabs: async function(page, times) {
+        for (let i = 0; i < times; i++) {
+            await page.keyboard.press('Tab');
+        }
+        await page.keyboard.press('Enter');
+    },
+
     /** Alternative to page.click() */
     click: async function(page, selector) {
         let element = await page.waitForSelector(selector);
