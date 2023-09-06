@@ -123,14 +123,15 @@ module.exports = {
 
 
     /**
-     * await uploadFile('hello.txt');
+     * await uploadFile('Upload files', 'hello.txt');
+     * Will press "Upload files" button
      * When file uploading popup appears - it will receive hello.txt from project root
      */
-    uploadFile: async function (fileName) {
+    uploadFile: async function (buttonName, file) {
         const fileChooserPromise = page.waitForEvent('filechooser');
-        await page.click('text="Upload files"');
+        await page.click(`text="${buttonName}"`);
         const fileChooser = await fileChooserPromise;
-        await fileChooser.setFiles(fileName);
+        await fileChooser.setFiles(file);
     },
 
     /**
