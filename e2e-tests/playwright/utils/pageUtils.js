@@ -134,10 +134,12 @@ module.exports = {
         await fileChooser.setFiles(file);
     },
 
-    // in case if uploadFile didn't work
-    uploadFileV2: async function (page, buttonName, file) {
+    /**
+     * await uploadFileV2(page, 'hello.txt');
+     * In case if uploadFile didn't work
+     */
+    uploadFileV2: async function (page, file) {
         await page.setInputFiles('input[type="file"]', file);
-        await page.click(`text="${buttonName}"`);
     },
 
     /**
