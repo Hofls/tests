@@ -82,6 +82,23 @@ module.exports = {
         return chatText;
     },
 
+    focusByLabel: async function(page, labelSelector) {
+        await page.click(labelSelector);
+        await page.keyboard.press('Tab');
+    },
+
+    readFocusedElement: async function(page) {
+        let valueText = await page.evaluate(() => document.activeElement.value);
+        if (valueText) {
+            return valueText;
+        }
+
+        let innerText = await page.evaluate(() => document.activeElement.innerText);
+        if (innerText) {
+            return innerText;
+        }
+    },
+
     // expect(pageText.includes('ID - 281737')).toBeTruthy();
     getPageText: async function(page) {
         return await page.evaluate(() => document.body.innerText);
