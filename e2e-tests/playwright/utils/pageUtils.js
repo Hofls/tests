@@ -38,6 +38,11 @@ module.exports = {
         await page.keyboard.press('Enter');
     },
 
+    /** Wait until visible */
+    getElement: async function(page, selector) {
+        return await page.waitForSelector(selector);
+    },
+
     /** Alternative to page.click() */
     click: async function(page, selector) {
         let element = await page.waitForSelector(selector);

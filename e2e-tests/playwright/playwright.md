@@ -9,6 +9,8 @@
     * `await page.click('text=/2020.11.24/');` (regex)
         * `<span>Last visit - 2020.11.24, at 16:43</span>`
 * [Css](https://appletree.or.kr/quick_reference_cards/CSS/CSS%20selectors%20cheatsheet.pdf)
+    * `page.locator("#oculus732").click()`
+         * `<button id = "oculus732">Login</button>`
     * `await page.locator('div:text-is("Login")').click();`
         * `<div>Login</div>`
     * `await page.locator('article:has(div.promo)').textContent();`
