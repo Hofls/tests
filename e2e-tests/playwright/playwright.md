@@ -49,6 +49,7 @@
               <div>Password</div>
             </foo>
           ```
+        * If multiple foo ancestors - pick specific one `ancestor::foo[1]`
     * `sdFrame.click('xpath=//a[starts-with(text(),"Info about")]');`
         * ```
             <foo>
