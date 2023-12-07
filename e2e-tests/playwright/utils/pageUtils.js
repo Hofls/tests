@@ -56,6 +56,7 @@ module.exports = {
     },
 
     clickInvisible: async function(page, selector) {
+        // or try regular click with force - .click({ force: true }
         let element = await page.$(selector);
         await element.dispatchEvent('click');
     },
