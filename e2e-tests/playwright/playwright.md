@@ -76,13 +76,15 @@
           ```
 
 ### Recipes
-##### Read focused element:
+##### Read element:
 * Get selected text
     * `await page.evaluate(() => document.getSelection().toString());`
 * Get focused element inner text:
     * `await page.evaluate(() => document.activeElement.innerText);`
 * Get focused input value:
     * `await page.evaluate(() => document.activeElement.value);`
+* Read value right of text "Hello, mister"
+    * `let userName = await page.locator('span:right-of(div:text-is("Hello, mister"))').first().innerText();`
     
 ##### Search elements
 * Strict:
