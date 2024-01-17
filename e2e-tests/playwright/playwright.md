@@ -59,6 +59,8 @@
 * Layout-based selectors
     * `await page.locator('input:right-of(:text("Username"))').first().fill('value');`
         * Fill an input to the right of "Username"
+    * `await page.locator(':nth-match(input:right-of(:text("Username")), 2)').first().fill('value');`
+        * Fill second input to the right of "Username"
     * `await page.locator('button[ngtooltip="Order now!"]:near(.promo-card)').first().click();`
         * Click a button with tooltip "Order now!" near the promo card
 * Combining different selector types:
