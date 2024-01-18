@@ -61,6 +61,8 @@
         * Fill an input to the right of "Username"
     * `await page.locator(':nth-match(input:right-of(:text("Username")), 2)').first().fill('value');`
         * Fill second input to the right of "Username"
+    * `await page.locator('button:right-of(:nth-match(div:text-is("Warning"), 2))').first().click();`
+        * Click on button to the right of second "Warning"
     * `await page.locator('button[ngtooltip="Order now!"]:near(.promo-card)').first().click();`
         * Click a button with tooltip "Order now!" near the promo card
 * Combining different selector types:
