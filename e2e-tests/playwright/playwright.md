@@ -89,6 +89,8 @@
     * `await page.evaluate(() => document.activeElement.value);`
 * Read value right of text "Hello, mister"
     * `let userName = await page.locator('span:right-of(div:text-is("Hello, mister"))').first().innerText();`
+* Count warnings on a page:
+    * `await page.locator('text="Warning!"').count();`
     
 ##### Search elements
 * Strict:
