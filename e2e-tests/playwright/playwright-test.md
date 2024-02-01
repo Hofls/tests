@@ -12,8 +12,11 @@
 * Debug - `npx playwright test --project=chromium --headed --debug`
 
 ### 
-* Assertions:
+* [Assertions](https://playwright.dev/docs/test-assertions):
     * `await expect(page.locator('text="Task done!"')).toBeVisible();`
     * `await expect(page.locator('.status')).not.toContainText('error');`
     * `await expect(page).toHaveScreenshot('expected-map.png');`
     * `await expect(page.locator('list > .component')).toHaveCount(3)`;
+    * `expect(value).toBeGreaterThan(34)`
+* Standard JS assertions:
+    * `console.assert(total === 27, "Wrong total");`
