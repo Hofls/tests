@@ -196,6 +196,7 @@ module.exports = {
 
     // await action.clickRightOf(page, 1200, 'text="Select a slot')
     clickRightOf: async function(page, offset, selector) {
+        await page.locator(selector).scrollIntoViewIfNeeded();
         let element = await page.$(selector);
         let box = await element.boundingBox();
         await page.mouse.click(box.x + offset, box.y);
@@ -203,6 +204,7 @@ module.exports = {
 
     // await action.clickBelowOf(page, 50, 'text="Pick a date"');
     clickBelowOf: async function(page, offset, selector) {
+        await page.locator(selector).scrollIntoViewIfNeeded();
         let element = await page.$(selector);
         let box = await element.boundingBox();
         await page.mouse.click(box.x + 10, box.y + offset);
