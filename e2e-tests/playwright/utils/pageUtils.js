@@ -210,6 +210,16 @@ module.exports = {
         await page.mouse.click(box.x + 10, box.y + offset);
     },
 
+    // Also useful to check if element exists or not
+    isVisible: async function (page, selector) {
+        try {
+            await page.waitForSelector(selector, { state: 'visible', timeout: 3000 });
+            return true;
+        } catch (error) {
+            return false;
+        }
+    },
+
     getProperty: async function(element, property) {
         return await (await element.getProperty(property)).jsonValue();
     },
