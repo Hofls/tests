@@ -144,3 +144,10 @@
 * Copy text:
     * `await page.keyboard.press('Control+C');`
     
+##### Random
+* Error - `page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://example.com`. Fix:
+```
+    let context = await browser.newContext({
+        ignoreHTTPSErrors: true
+    });
+```
